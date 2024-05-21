@@ -2,7 +2,7 @@ package com.example.demo.Config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.example.demo.Usuario.UsuarioService;
+import com.example.demo.Usuario.Domain.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

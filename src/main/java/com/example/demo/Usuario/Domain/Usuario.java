@@ -1,4 +1,4 @@
-package com.example.demo.Usuario;
+package com.example.demo.Usuario.Domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -14,9 +14,9 @@ import java.util.List;
 public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
-    @Column
+    @Column(nullable = false)
     private String name;
 
     @Column(unique = true, nullable = false)
@@ -24,6 +24,9 @@ public class Usuario implements UserDetails {
 
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
+    String telefono;
 
     @Column
     private Role role;

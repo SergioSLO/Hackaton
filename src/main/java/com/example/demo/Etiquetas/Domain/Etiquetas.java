@@ -1,5 +1,7 @@
 package com.example.demo.Etiquetas.Domain;
 
+import com.example.demo.Salon.Domain.Salon;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,12 +14,13 @@ import java.util.List;
 public class Etiquetas {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idEtiqueta;
+    private Integer id;
 
     @Column
     private String nombre;
 
-    public Collection<? extends GrantedAuthority> getAuthorities(){
-        return List.of();
-    }
+    @JsonBackReference
+    @ManyToMany(mappedBy = "etiquetas")
+    private List<Salon> salones;
+
 }
