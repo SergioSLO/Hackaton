@@ -8,5 +8,5 @@ import java.util.Optional;
 
 public interface EtiquetasRepository extends JpaRepository<Etiquetas, Long> {
 
-    Optional<Etiquetas> findByidEtiqueta(int idEtiqueta);
+    Optional<Etiquetas> findByidEtiqueta(long idEtiqueta);
 }
