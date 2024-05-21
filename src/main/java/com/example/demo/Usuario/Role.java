@@ -1,4 +1,4 @@
-package com.example.demo.Student;
+package com.example.demo.Usuario;
 
 public enum Role {
     USER, ADMIN
