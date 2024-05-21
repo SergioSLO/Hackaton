@@ -5,9 +5,11 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
+@Entity
 public class Salon {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,7 +25,7 @@ public class Salon {
 
     @JsonManagedReference
     @ManyToMany
-    @JoinTable(name = "Salon_Etriqueta",
+    @JoinTable(name = "Salon_Etiqueta",
             joinColumns = @JoinColumn(name = "Salon_id"),
             inverseJoinColumns = @JoinColumn(name = "Etiqueta_id"))
     private List<Etiquetas> etiquetas;
