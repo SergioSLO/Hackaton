@@ -30,4 +30,6 @@ public class Salon {
     private List<Etiquetas> etiquetas;
 
 
+
+
 }

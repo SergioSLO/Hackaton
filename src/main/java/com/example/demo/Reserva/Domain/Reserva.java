@@ -1,9 +1,8 @@
 package com.example.demo.Reserva.Domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.demo.Salon.Domain.Salon;
+import com.example.demo.Usuario.Domain.Usuario;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -24,4 +23,9 @@ public class Reserva implements Serializable {
 
     private Time horaFin;
 
+    @ManyToOne
+    private Usuario usuario;
+
+    @ManyToOne
+    private Salon salon;
 }
