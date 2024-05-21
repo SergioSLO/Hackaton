@@ -6,13 +6,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class StudentService {
+public class UsuarioService {
 
     @Autowired
-    private StudentRepository studentRepository;
+    private UsuarioRepository usuarioRepository;
 
     public UserDetailsService userDetailsService() {
-        return username -> studentRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return username -> usuarioRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 
 

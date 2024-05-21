@@ -2,7 +2,7 @@ package com.example.demo.Config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.example.demo.Student.StudentService;
+import com.example.demo.Student.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,7 +22,7 @@ public class JwtService {
     private String secret;
 
     @Autowired
-    StudentService userService;
+    UsuarioService usuarioService;
 
     public String extractUsername(String token) {
         return JWT.decode(token).getSubject();
@@ -50,7 +50,7 @@ public class JwtService {
 
         JWT.require(Algorithm.HMAC256(secret)).build().verify(token);
 
-        UserDetails userDetails = userService.userDetailsService().loadUserByUsername(userEmail);
+        UserDetails userDetails = usuarioService.userDetailsService().loadUserByUsername(userEmail);
 
         SecurityContext context = SecurityContextHolder.createEmptyContext();
 

@@ -6,27 +6,26 @@ import com.example.demo.Auth.dtos.AuthRegisterRequest;
 import com.example.demo.Auth.exceptions.UserAlreadyExistException;
 import com.example.demo.Config.JwtService;
 import com.example.demo.Student.Role;
-import com.example.demo.Student.Student;
-import com.example.demo.Student.StudentRepository;
+import com.example.demo.Student.Usuario;
+import com.example.demo.Student.UsuarioRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
 public class AuthService {
-    final StudentRepository userRepository;
+    final UsuarioRepository usuarioRepository;
     final JwtService jwtService;
     final PasswordEncoder passwordEncoder;
     final ModelMapper modelMapper;
 
     @Autowired
-    public AuthService(StudentRepository userRepository, JwtService jwtService, PasswordEncoder passwordEncoder, ModelMapper modelMapper) {
-        this.userRepository = userRepository;
+    public AuthService(UsuarioRepository usuarioRepository, JwtService jwtService, PasswordEncoder passwordEncoder, ModelMapper modelMapper) {
+        this.usuarioRepository = usuarioRepository;
         this.jwtService = jwtService;
         this.passwordEncoder = passwordEncoder;
         this.modelMapper = modelMapper;
@@ -34,7 +33,7 @@ public class AuthService {
 
 
     public AuthJwtResponse login(AuthLoginRequest req) {
-        Optional<Student> user = userRepository.findByEmail(req.getEmail());
+        Optional<Usuario> user = usuarioRepository.findByEmail(req.getEmail());
 
         if (user.isEmpty()) throw new UsernameNotFoundException("Email is not registered");
 
@@ -48,20 +47,20 @@ public class AuthService {
     }
 
     public AuthJwtResponse register(AuthRegisterRequest req) {
-        Optional<Student> user = userRepository.findByEmail(req.getEmail());
+        Optional<Usuario> user = usuarioRepository.findByEmail(req.getEmail());
         if (user.isPresent()) throw new UserAlreadyExistException("Email is already registered");
 
-        Student newUser = modelMapper.map(req, Student.class);
-        newUser.setPassword(passwordEncoder.encode(req.getPassword()));
+        Usuario newUsuario = modelMapper.map(req, Usuario.class);
+        newUsuario.setPassword(passwordEncoder.encode(req.getPassword()));
 
 
-        if(req.getIsAdmin()) newUser.setRole(Role.ADMIN);
-        else newUser.setRole(Role.USER);
+        if(req.getIsAdmin()) newUsuario.setRole(Role.ADMIN);
+        else newUsuario.setRole(Role.USER);
 
-        userRepository.save(newUser);
+        usuarioRepository.save(newUsuario);
 
         AuthJwtResponse response = new AuthJwtResponse();
-        response.setToken(jwtService.generateToken(newUser));
+        response.setToken(jwtService.generateToken(newUsuario));
         return response;
     }
 
