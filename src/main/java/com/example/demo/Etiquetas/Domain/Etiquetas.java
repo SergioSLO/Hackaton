@@ -1,4 +1,4 @@
-package com.example.demo.Etiquetas;
+package com.example.demo.Etiquetas.Domain;
 
 import jakarta.persistence.*;
 import lombok.Data;

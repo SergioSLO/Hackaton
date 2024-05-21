@@ -1,4 +1,6 @@
-package com.example.demo.Etiquetas;
+package com.example.demo.Etiquetas.Infraestructure;
+
+import com.example.demo.Etiquetas.Domain.Etiquetas;
 
 import java.util.Optional;
 
