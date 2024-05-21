@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/student")
-public class StudentController {
+public class UserController {
     @Autowired
-    StudentService studentService;
+    UserService userService;
 
 }
