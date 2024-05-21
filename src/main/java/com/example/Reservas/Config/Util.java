@@ -1,4 +1,4 @@
-package com.example.demo.Config;
+package com.example.Reservas.Config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

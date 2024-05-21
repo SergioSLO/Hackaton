@@ -1,4 +1,4 @@
-package com.example.demo.Student;
+package com.example.Reservas.Student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,8 +1,8 @@
-package com.example.demo.Config;
+package com.example.Reservas.Config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.example.demo.Student.StudentService;
+import com.example.Reservas.Student.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

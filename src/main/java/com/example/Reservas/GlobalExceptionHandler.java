@@ -1,7 +1,7 @@
-package com.example.demo;
+package com.example.Reservas;
 
-import com.example.demo.Auth.exceptions.ResourceNotFoundException;
-import com.example.demo.Auth.exceptions.UserAlreadyExistException;
+import com.example.Reservas.Auth.exceptions.ResourceNotFoundException;
+import com.example.Reservas.Auth.exceptions.UserAlreadyExistException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

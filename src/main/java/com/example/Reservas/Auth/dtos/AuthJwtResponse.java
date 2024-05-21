@@ -1,4 +1,4 @@
-package com.example.demo.Auth.dtos;
+package com.example.Reservas.Auth.dtos;
 
 import lombok.Data;
 

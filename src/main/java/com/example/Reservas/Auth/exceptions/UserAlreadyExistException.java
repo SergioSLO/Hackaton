@@ -1,4 +1,4 @@
-package com.example.demo.Auth.exceptions;
+package com.example.Reservas.Auth.exceptions;
 
 public class UserAlreadyExistException extends RuntimeException{
     public UserAlreadyExistException(String message) {super(message);}

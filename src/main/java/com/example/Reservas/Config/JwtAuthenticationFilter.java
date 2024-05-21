@@ -1,4 +1,4 @@
-package com.example.demo.Config;
+package com.example.Reservas.Config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

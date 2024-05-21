@@ -1,13 +1,13 @@
-package com.example.demo.Auth;
+package com.example.Reservas.Auth;
 
-import com.example.demo.Auth.dtos.AuthJwtResponse;
-import com.example.demo.Auth.dtos.AuthLoginRequest;
-import com.example.demo.Auth.dtos.AuthRegisterRequest;
-import com.example.demo.Auth.exceptions.UserAlreadyExistException;
-import com.example.demo.Config.JwtService;
-import com.example.demo.Student.Role;
-import com.example.demo.Student.Student;
-import com.example.demo.Student.StudentRepository;
+import com.example.Reservas.Auth.dtos.AuthJwtResponse;
+import com.example.Reservas.Auth.dtos.AuthLoginRequest;
+import com.example.Reservas.Auth.dtos.AuthRegisterRequest;
+import com.example.Reservas.Auth.exceptions.UserAlreadyExistException;
+import com.example.Reservas.Config.JwtService;
+import com.example.Reservas.Student.Role;
+import com.example.Reservas.Student.Student;
+import com.example.Reservas.Student.StudentRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

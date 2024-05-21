@@ -1,4 +1,4 @@
-package com.example.demo.Student;
+package com.example.Reservas.Student;
 
 import jakarta.persistence.*;
 import lombok.Data;

@@ -1,8 +1,8 @@
-package com.example.demo.Auth;
+package com.example.Reservas.Auth;
 
-import com.example.demo.Auth.dtos.AuthJwtResponse;
-import com.example.demo.Auth.dtos.AuthLoginRequest;
-import com.example.demo.Auth.dtos.AuthRegisterRequest;
+import com.example.Reservas.Auth.dtos.AuthJwtResponse;
+import com.example.Reservas.Auth.dtos.AuthLoginRequest;
+import com.example.Reservas.Auth.dtos.AuthRegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
