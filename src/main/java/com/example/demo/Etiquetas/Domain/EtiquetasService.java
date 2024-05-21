@@ -6,5 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EtiquetasService {
-
+    @Autowired
+    private EtiquetasRepository etiquetasRepository;
 }
