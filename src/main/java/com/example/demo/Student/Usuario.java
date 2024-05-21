@@ -11,7 +11,7 @@ import java.util.List;
 
 @Data
 @Entity
-public class User implements UserDetails {
+public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -27,6 +27,12 @@ public class User implements UserDetails {
 
     @Column
     private Role role;
+
+
+
+
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
